@@ -1,8 +1,14 @@
-pipelineJob('pipelineJob') {
+pipelineJob('theme-park-job') {
     definition {
-        cps {
-            script(readFileFromWorkspace('pipelineJob.groovy'))
-            sandbox()
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'https://github.com/sprinkle24/ThemePark.git'
+                    }
+                    branch 'master'
+                }
+            }
         }
     }
 }
